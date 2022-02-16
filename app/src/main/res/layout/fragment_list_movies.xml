@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.view.ListMoviesFragment"
+    android:background="@color/black">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/empty_state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/twenty_four_dp"
+        app:cardCornerRadius="@dimen/six_dp"
+        android:layout_marginStart="@dimen/twelve_dp"
+        android:layout_marginEnd="@dimen/twelve_dp"
+        android:layout_marginTop="@dimen/eighty_two_dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone">
+        <LinearLayout
+            android:id="@+id/empty_state_empty_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/errorText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:textColor="@color/black"
+                android:padding="@dimen/eight_dp"
+                android:gravity="center"
+                android:textSize="@dimen/eighteen_sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="@dimen/thirty_dp"
+        android:layout_height="@dimen/thirty_dp"
+        android:src="@drawable/ic_search"
+        tools:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/rvListMovies"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/ten_dp"/>
+
+    <TextView
+        android:id="@+id/tvTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/rvListMovies"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="gone"
+        android:textColor="@color/white"
+        android:textSize="@dimen/twenty_two_sp"
+        android:layout_margin="@dimen/ten_dp"
+        android:text="@string/popular_movies"/>
+
+    <LinearLayout
+        android:id="@+id/llSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/rvListMovies"
+        android:weightSum="5.5">
+
+        <TextView
+            android:id="@+id/tvCancel"
+            android:layout_width="@dimen/zero_dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel"
+            android:textStyle="bold"
+            android:textSize="@dimen/twenty_sp"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/five_dp"/>
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="@dimen/zero_dp"
+            android:layout_height="@dimen/thirty_five_dp"
+            android:layout_weight="4"
+            android:background="@color/gray"
+            android:hint="@string/search"
+            android:textColorHint="@color/white"
+            android:drawablePadding="@dimen/ten_dp"
+            android:paddingStart="@dimen/ten_dp"
+            android:paddingLeft="@dimen/ten_dp"
+            android:paddingEnd="@dimen/ten_dp"
+            android:paddingRight="@dimen/ten_dp"
+            android:layout_margin="@dimen/ten_dp"/>
+
+        <ImageView
+            android:id="@+id/ivSend"
+            android:layout_width="@dimen/zero_dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_send"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/five_dp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListMovies"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/seventy_dp"
+        android:visibility="gone"
+        tools:background="@color/gray"
+        tools:visibility="visible"/>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress"
+        style="@style/SpinKitView.Large.ThreeBounce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:SpinKit_Color="@android:color/holo_blue_dark"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
