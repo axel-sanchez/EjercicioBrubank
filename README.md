@@ -6,6 +6,7 @@ Este proyecto contiene las siguientes características:
 
 La pantalla principal donde se ve un listado de peliculas o series populares o las que desee buscar el usuario.
 Una vista con una película específica con su descipción completa.
+
 Capturas de pantalla
  ![WhatsApp Image 2022-02-18 at 6 15 41 PM (1)](https://user-images.githubusercontent.com/51034538/154771702-00a8154b-4d99-4752-bc20-28b9922ac360.jpeg)
 
